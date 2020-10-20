@@ -1,56 +1,56 @@
 <template>
-  <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <HelloWorld />
-    </v-main>
-  </v-app>
+	<v-app>
+		<v-main>
+			<div class="wrapper"><Landing /></div>
+		</v-main>
+		<Footer />
+	</v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import Landing from '@/components/Landing'
+import Footer from '@/components/Footer'
 
 export default {
-  name: "App",
-
-  components: {
-    HelloWorld
-  },
-
-  data: () => ({
-    //
-  })
-};
+	components: {
+		Landing,
+		Footer,
+	},
+}
 </script>
+
+<style>
+@font-face {
+	font-family: 'Google Sans';
+	src: url('./assets/fonts/googlesans-regular.woff') format('woff');
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'Google Sans';
+	src: url('./assets/fonts/googlesans-medium.woff') format('woff');
+	font-style: normal;
+	font-weight: 500;
+}
+
+html,
+body,
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Google Sans', Helvetica, Arial, sans-serif;
+}
+
+.wrapper {
+	padding: 60px 0 !important;
+	width: 75% !important;
+	margin: auto !important;
+}
+
+@media screen and (max-width: 768px) {
+	.wrapper {
+		padding: 30px 0 !important;
+		width: 75% !important;
+		margin: auto !important;
+	}
+}
+</style>
